@@ -1,5 +1,4 @@
-![Build Status](https://travis-ci.org/mmb/rspec_stubout.png)](https://travis-ci.org/mmb/rspec_stubout)
-[![Code Climate](https://codeclimate.com/github/mmb/rspec_stubout.png)](https://codeclimate.com/github/mmb/rspec_stubout)
+[![Build Status](https://travis-ci.org/mmb/rspec_stubout.png)](https://travis-ci.org/mmb/rspec_stubout) [![Code Climate](https://codeclimate.com/github/mmb/rspec_stubout.png)](https://codeclimate.com/github/mmb/rspec_stubout)
 
 Make your RSpec specs fail when you stub the object under test (subject) because it is bad practice.
 
