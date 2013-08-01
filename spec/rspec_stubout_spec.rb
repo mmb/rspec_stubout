@@ -81,4 +81,14 @@ describe RspecStubout do
 
   end
 
+  context 'when described_class is stubbed' do
+
+    it 'raises an error' do
+      expect {
+        described_class.stub(method1: 'foo')
+      }.to raise_error('RspecStubout is the object under test and should not be stubbed')
+    end
+
+  end
+
 end

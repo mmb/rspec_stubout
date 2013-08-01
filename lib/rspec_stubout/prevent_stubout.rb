@@ -8,6 +8,10 @@ module RspecStubout
     rspec_config.before(:each) do
       unless example.metadata[:allow_stubout]
         begin
+          described_class.stub(:stub) do
+            raise "#{described_class} is the object under test and should not be stubbed"
+          end
+
           subject.stub(:stub) do
             raise "#{subject} is the object under test and should not be stubbed"
           end
