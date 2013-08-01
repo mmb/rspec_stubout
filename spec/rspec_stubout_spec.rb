@@ -37,7 +37,7 @@ describe RspecStubout do
       expect {
         object.stub(method1: 'foo')
       }.to raise_error(
-               "subject is the object under test and should not be stubbed")
+               'subject is the object under test and should not be stubbed')
     end
 
   end
@@ -50,7 +50,7 @@ describe RspecStubout do
       expect {
         object.stub(method1: 'foo')
       }.to raise_error(
-               "subject is the object under test and should not be stubbed")
+               'subject is the object under test and should not be stubbed')
     end
 
   end
