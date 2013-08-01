@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
   s.homepage = 'https://github.com/mmb/rspec_stubout'
   s.authors = ['Matthew M. Boedicker']
   s.email = %w{matthewm@boedicker.org}
+  s.license = 'MIT'
 
   s.add_dependency 'rspec'
 
