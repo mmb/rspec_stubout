@@ -8,17 +8,18 @@ module RspecStubout
     rspec_config.before(:each) do
       unless example.metadata[:allow_stubout]
         begin
-          described_class.stub(:stub) do
-            raise "#{described_class} is the object under test and should not be stubbed"
-          end
-
-          subject.stub(:stub) do
-            raise "#{subject} is the object under test and should not be stubbed"
-          end
+          RspecStubout.prevent_stub_on(described_class)
+          RspecStubout.prevent_stub_on(subject)
         rescue => e
           warn "rspec stubout setup failed, possibly setup in another before(:each) has not run yet: #{e.inspect}"
         end
       end
+    end
+  end
+
+  def prevent_stub_on(o)
+    unless o.nil?
+      o.stub(:stub) { raise "#{o} is the object under test and should not be stubbed" }
     end
   end
 
