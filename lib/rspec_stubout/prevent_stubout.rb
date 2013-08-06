@@ -11,7 +11,7 @@ module RspecStubout
           RspecStubout.prevent_stub_on(described_class)
           RspecStubout.prevent_stub_on(subject)
         rescue => e
-          warn "rspec stubout setup failed, possibly setup in another before(:each) has not run yet: #{e.inspect}"
+          warn "rspec stubout setup failed, possibly setup in another before(:each) has not run yet: #{e.backtrace[0]}, #{e.inspect}"
         end
       end
     end
