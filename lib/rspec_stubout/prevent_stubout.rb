@@ -8,8 +8,8 @@ module RspecStubout
     rspec_config.before(:each) do
       unless example.metadata[:allow_stubout]
         begin
-          RspecStubout.prevent_stub_on(described_class)
           RspecStubout.prevent_stub_on(subject)
+          RspecStubout.prevent_stub_on(described_class) unless described_class == subject
         rescue => e
           warn "rspec stubout setup failed, possibly setup in another before(:each) has not run yet: #{e.backtrace[0]}, #{e.inspect}"
         end
